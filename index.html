@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>LabFlow – Every Laboratory. Under Control.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#0B1120;--bg2:#111827;--card:#172033;--ac:#06B6D4;--ac2:#14B8A6;--tx:#F8FAFC;--mu:#94A3B8;--wa:#F59E0B;--er:#EF4444;--ok:#22C55E;--bd:#27334d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,select{font:inherit;color:inherit}a{color:var(--ac)}
+.btn{background:var(--ac);color:#04222b;border:0;border-radius:8px;padding:8px 14px;font-weight:600;cursor:pointer}.btn:hover{filter:brightness(1.1)}
+.btn.g{background:transparent;color:var(--tx);border:1px solid var(--bd)}.btn.d{background:var(--er);color:#fff}.btn.s{padding:4px 9px;font-size:12px}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.land{max-width:1000px;margin:0 auto;padding:24px}.nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.nav b{font-size:20px;margin-right:auto;color:var(--ac)}
+.hero{padding:56px 0 32px}.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.1;margin:0 0 14px;max-width:16em}.hero p{color:var(--mu);max-width:36em;font-size:16px}
+.row{display:flex;gap:10px;flex-wrap:wrap}.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px}.card h3{margin:0 0 6px;font-size:15px}.mu{color:var(--mu)}
+.price b{font-size:24px}
+#app{display:none;min-height:100vh}#app.on{display:flex}
+aside{width:210px;background:var(--bg2);border-right:1px solid var(--bd);padding:14px 10px;position:sticky;top:0;height:100vh;flex:none}
+aside .lg{font-weight:700;font-size:18px;color:var(--ac);padding:4px 10px 14px}
+aside button{display:block;width:100%;text-align:left;background:none;border:0;padding:8px 10px;border-radius:8px;color:var(--mu);cursor:pointer}
+aside button.on,aside button:hover{background:var(--card);color:var(--tx)}
+main{flex:1;padding:20px;min-width:0}main h2{margin:0 0 14px;font-size:22px}
+.tb{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+input,select{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:7px 10px;width:100%}.tb input,.tb select{width:auto}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--bd);white-space:nowrap}th{color:var(--mu);font-weight:500;cursor:pointer}
+.tag{padding:2px 8px;border-radius:99px;font-size:12px;background:#0003}.w{color:var(--wa)}.e{color:var(--er)}.o{color:var(--ok)}
+.kpi{font-size:26px;font-weight:700}.bars{display:flex;align-items:flex-end;gap:8px;height:140px}.bars div{flex:1;background:var(--ac);border-radius:4px 4px 0 0;position:relative;min-height:2px}.bars span{position:absolute;bottom:-18px;left:0;right:0;text-align:center;font-size:11px;color:var(--mu)}
+dialog{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:12px;width:min(420px,92vw)}dialog::backdrop{background:#000a}
+dialog label{display:block;margin:8px 0 2px;color:var(--mu);font-size:12px}
+#toast{position:fixed;bottom:20px;right:20px;background:var(--ok);color:#03210e;padding:8px 14px;border-radius:8px;display:none;z-index:9}
+.chat{max-height:300px;overflow:auto;margin:10px 0}.chat p{margin:6px 0}
+@media(max-width:720px){#app.on{flex-direction:column}aside{width:100%;height:auto;position:static;display:flex;overflow-x:auto;gap:4px}aside .lg{display:none}aside button{width:auto;white-space:nowrap}}
+@media (prefers-color-scheme:light){}
+</style></head><body>
+<div id="land" class="land">
+<nav class="nav"><b>LABFLOW</b><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><button class="btn g" onclick="demo()">Sign in</button><button class="btn" onclick="demo()">Get started</button></nav>
+<section class="hero"><h1>Your Laboratory. Smarter, Safer, More Organized.</h1><p>Manage chemicals, equipment, inventory and laboratory operations from one intelligent workspace.</p>
+<div class="row"><button class="btn" onclick="demo()">Start Managing Your Lab</button><button class="btn g" onclick="demo()">Explore Live Demo</button></div></section>
+<section id="features"><h2>What replaces your stock register</h2><div class="grid">
+<div class="card"><h3>Chemical inventory</h3><p class="mu">Batches, expiry, units, stock movements. Negative stock is blocked.</p></div>
+<div class="card"><h3>Live alerts</h3><p class="mu">Low stock, expiring and expired items are recalculated from your records.</p></div>
+<div class="card"><h3>Procurement</h3><p class="mu">Request, approve, order, then receive stock. Approval never adds stock.</p></div>
+<div class="card"><h3>Equipment</h3><p class="mu">Maintenance intervals, due dates and service history.</p></div>
+<div class="card"><h3>LabFlow Intelligence</h3><p class="mu">Ask questions answered from your data. Rule-based in this demo.</p></div>
+<div class="card"><h3>Reports</h3><p class="mu">CSV export and print-friendly reports.</p></div></div></section>
+<section id="pricing" style="margin-top:32px"><h2>Pricing (proposed, not validated)</h2><div class="grid price">
+<div class="card"><h3>Starter</h3><b>Free</b><p class="mu">One lab, limited records, basic alerts.</p></div>
+<div class="card"><h3>Professional</h3><b>₹999/month</b><p class="mu">Equipment, procurement, analytics, AI insights, exports.</p></div>
+<div class="card"><h3>Institutional</h3><b>Custom</b><p class="mu">Multiple labs, permissions, priority support.</p></div></div>
+<p class="mu">No payment processing exists in this prototype.</p></section>
+<section id="faq" style="margin:32px 0"><h2>FAQ</h2><div class="card"><h3>Is the demo data real?</h3><p class="mu">No. It is sample data stored in your browser only. Reset Demo restores it.</p><h3>Is there a backend?</h3><p class="mu">This build is the demo mode. The Supabase schema, auth and row-level security are not part of this page.</p></div></section>
+</div>
+<div id="app"><aside id="side"></aside><main id="main"></main></div>
+<dialog id="dlg"><form method="dialog" id="frm"></form></dialog><div id="toast" role="status"></div>
+<script>
+const K='labflow_demo_v1',D=864e5,today=()=>new Date(new Date().toDateString()).getTime(),iso=o=>new Date(today()+o*D).toISOString().slice(0,10);
+const days=s=>Math.round((new Date(s).getTime()-today())/D);
+function seed(){const c=[["Sodium Hydroxide","NaOH","Bases","L",25,"kg",10,420],["Hydrochloric Acid","HCl","Acids","L",40,"L",12,310],["Sulfuric Acid","H2SO4","Acids","L",9,"L",10,520],["Ethanol","C2H5OH","Solvents","L",60,"L",20,180],["Acetone","C3H6O","Solvents","L",3,"L",8,260],["Sodium Chloride","NaCl","Salts","L",18,"kg",5,90],["Potassium Permanganate","KMnO4","Oxidizers","L",2.5,"kg",1,1400],["Calcium Carbonate","CaCO3","Salts","L",12,"kg",4,150],["Methanol","CH3OH","Solvents","L",14,"L",6,230],["Nitric Acid","HNO3","Acids","L",7,"L",5,610],["Glycerol","C3H8O3","Organics","L",6,"L",2,340],["Ammonium Chloride","NH4Cl","Salts","L",5,"kg",2,200]];
+const ex=[200,15,400,-5,25,500,12,600,90,-40,300,18];
+S={chem:c.map((x,i)=>({id:'C'+(i+1),name:x[0],formula:x[1],cat:x[2],qty:x[4],unit:x[5],min:x[6],cost:x[7],loc:'Shelf '+(i%4+1),batch:'B-26'+(100+i),exp:iso(ex[i])})),
+eq:[["Analytical Balance",90,-60],["Centrifuge",180,-170],["Spectrophotometer",180,-100],["pH Meter",60,-75],["Magnetic Stirrer",365,-20],["Laboratory Oven",120,-30]].map((x,i)=>({id:'E'+(i+1),name:x[0],int:x[1],last:iso(x[2]),status:'Operational',hist:[iso(x[2])]})),
+tx:c.map((x,i)=>({date:iso(-60+i*3),chem:x[0],type:'Purchase',qty:x[4]+5,cost:x[7]})).concat(c.slice(0,8).map((x,i)=>({date:iso(-20+i*2),chem:x[0],type:'Consumption',qty:2+i%3,cost:x[7]}))),
+pr:[{id:'P1',chem:'Acetone',qty:20,est:5200,sup:'LabSupplies Co.',st:'Pending'},{id:'P2',chem:'Sulfuric Acid',qty:15,est:7800,sup:'ChemTrade',st:'Approved'}],read:{}};save()}
+let S,view='Overview',q='',cat='',sort='name';
+try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+const $=s=>document.querySelector(s),fm=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2200)}
+function demo(){if(!S)seed();$('#land').style.display='none';$('#app').classList.add('on');go('Overview')}
+function alerts(){const a=[];S.chem.forEach(c=>{const d=days(c.exp);if(c.qty<=c.min)a.push({k:'low-'+c.id,t:'Low stock',p:c.qty<=c.min/2?'High':'Medium',m:`${c.name}: ${c.qty} ${c.unit} (min ${c.min})`});
+if(d<0)a.push({k:'exp-'+c.id,t:'Expired',p:'High',m:`${c.name} expired ${-d} days ago`});else if(d<=30)a.push({k:'soon-'+c.id,t:'Expiring soon',p:'Medium',m:`${c.name} expires in ${d} days`})});
+S.eq.forEach(e=>{const n=days(e.last)+e.int;if(n<=7)a.push({k:'eq-'+e.id,t:'Maintenance',p:n<0?'High':'Medium',m:`${e.name} ${n<0?'overdue by '+-n+' days':'due in '+n+' days'}`})});
+S.pr.filter(p=>p.st=='Pending').forEach(p=>a.push({k:'pr-'+p.id,t:'Procurement pending',p:'Low',m:`${p.id}: ${p.chem} x ${p.qty}`}));return a}
+const tabs=['Overview','Inventory','Equipment','Consumption','Alerts','Procurement','Analytics','Reports','Assistant','Settings'];
+function go(v){view=v;$('#side').innerHTML='<div class="lg">LABFLOW</div>'+tabs.map(t=>`<button class="${t==v?'on':''}" onclick="go('${t}')">${t}${t=='Alerts'?' ('+alerts().filter(a=>!S.read[a.k]).length+')':''}</button>`).join('');
+$('#main').innerHTML=V[v]();if(view=='Inventory'&&window._f){}}
+const rerender=()=>go(view);
+function form(title,fields,cb){const f=$('#frm');f.innerHTML=`<h3>${title}</h3>`+fields.map(x=>`<label for="f_${x[0]}">${x[1]}</label>`+(x[3]?`<select id="f_${x[0]}">${x[3].map(o=>`<option ${o==x[4]?'selected':''}>${esc(o)}</option>`).join('')}</select>`:`<input id="f_${x[0]}" type="${x[2]||'text'}" value="${esc(x[4]??'')}" ${x[2]=='number'?'step="any" min="0"':''} required>`)).join('')+'<div class="row" style="margin-top:14px"><button class="btn" value="ok">Save</button><button class="btn g" value="x" formnovalidate>Cancel</button></div>';
+f.onsubmit=ev=>{const v=ev.submitter&&ev.submitter.value;if(v!='ok')return;const o={};fields.forEach(x=>o[x[0]]=$('#f_'+x[0]).value);if(cb(o)===false){ev.preventDefault()}};$('#dlg').showModal()}
+const names=()=>S.chem.map(c=>c.name);
+const chem=n=>S.chem.find(c=>c.name==n);
+function addChem(id){const c=id?S.chem.find(x=>x.id==id):{name:'',formula:'',cat:'',qty:0,unit:'L',min:5,cost:0,exp:iso(365),loc:'',batch:''};
+form(id?'Edit chemical':'Add chemical',[['name','Name','',0,c.name],['formula','Formula','',0,c.formula],['cat','Category','',0,c.cat],['qty','Quantity','number',0,c.qty],['unit','Unit','',['L','kg','g','mL'].includes(c.unit)?[c.unit,...['L','kg','g','mL'].filter(u=>u!=c.unit)]:['L','kg','g','mL']],['min','Minimum stock','number',0,c.min],['cost','Unit cost (₹)','number',0,c.cost],['exp','Expiry date','date',0,c.exp],['loc','Storage location','',0,c.loc],['batch','Batch number','',0,c.batch]],o=>{
+['qty','min','cost'].forEach(k=>o[k]=+o[k]);if(o.qty<0||o.min<0||o.cost<0)return false;
+if(id){const d=o.qty-c.qty;Object.assign(c,o);if(d)S.tx.push({date:iso(0),chem:c.name,type:'Adjustment',qty:Math.abs(d),cost:c.cost})}else{S.chem.push({id:'C'+Date.now()%1e6,...o});S.tx.push({date:iso(0),chem:o.name,type:'Initial stock',qty:o.qty,cost:o.cost})}
+save();toast('Chemical saved');setTimeout(rerender)})}
+function delChem(id){if(confirm('Delete this chemical record? This cannot be undone.')){S.chem=S.chem.filter(c=>c.id!=id);save();rerender();toast('Chemical deleted')}}
+function consume(n){form('Record consumption',[['chem','Chemical','',names(),n||names()[0]],['qty','Quantity consumed','number'],['who','Researcher','',0,'Demo user'],['why','Experiment / purpose','']],o=>{const c=chem(o.chem),q=+o.qty;
+if(!(q>0)){toast('Enter a quantity above 0');return false}if(q>c.qty){toast(`Only ${c.qty} ${c.unit} available`);return false}
+c.qty=+(c.qty-q).toFixed(3);S.tx.push({date:iso(0),chem:c.name,type:'Consumption',qty:q,cost:c.cost,who:o.who,why:o.why});save();toast('Consumption recorded');setTimeout(rerender)})}
+function newPR(n){form('New purchase request',[['chem','Chemical','',names(),n],['qty','Quantity','number'],['est','Estimated price (₹)','number'],['sup','Supplier','']],o=>{if(!(+o.qty>0))return false;S.pr.push({id:'P'+(S.pr.length+1+Date.now()%100),chem:o.chem,qty:+o.qty,est:+o.est,sup:o.sup,st:'Pending'});save();toast('Request submitted');setTimeout(rerender)})}
+function prStep(id,st){const p=S.pr.find(x=>x.id==id);if(st=='Received'){form('Record delivered batch',[['batch','Batch number','',0,'B-'+Date.now()%1e5],['qty','Quantity received','number',0,p.qty],['exp','Expiry date','date',0,iso(365)]],o=>{const c=chem(p.chem),q=+o.qty;if(!(q>0))return false;c.qty+=q;c.batch=o.batch;c.exp=o.exp;S.tx.push({date:iso(0),chem:c.name,type:'Purchase',qty:q,cost:p.est/p.qty});p.st='Received';save();toast('Stock received');setTimeout(rerender)});return}
+p.st=st;save();rerender()}
+function eqAct(id,a){const e=S.eq.find(x=>x.id==id);if(a=='m'){e.last=iso(0);e.hist.push(iso(0));e.status='Operational';toast('Maintenance recorded')}else{e.status='Needs Attention';toast('Fault reported')}save();rerender()}
+function csv(name,rows){const t=rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/csv'}));a.download=name;a.click();toast('Exported '+name)}
+const val=()=>S.chem.reduce((s,c)=>s+c.qty*c.cost,0);
+const sb=(d)=>d<0?'<span class="tag e">Expired</span>':d<=30?`<span class="tag w">${d}d left</span>`:`<span class="tag o">OK</span>`;
+function monthly(){const m={};S.tx.filter(t=>t.type=='Consumption').forEach(t=>{const k=t.date.slice(0,7);m[k]=(m[k]||0)+t.qty});return Object.entries(m).sort()}
+const bars=(d)=>{const mx=Math.max(1,...d.map(x=>x[1]));return `<div class="bars" style="margin-bottom:22px">${d.map(x=>`<div style="height:${x[1]/mx*100}%" title="${x[0]}: ${x[1]}"><span>${esc(x[0].slice(-5))}</span></div>`).join('')}</div>`};
+const V={
+Overview(){const a=alerts();return `<h2>Overview</h2><div class="grid"><div class="card"><div class="mu">Chemical records</div><div class="kpi">${S.chem.length}</div></div><div class="card"><div class="mu">Equipment</div><div class="kpi">${S.eq.length}</div></div><div class="card"><div class="mu">Low stock</div><div class="kpi w">${S.chem.filter(c=>c.qty<=c.min).length}</div></div><div class="card"><div class="mu">Expiring / expired</div><div class="kpi e">${S.chem.filter(c=>days(c.exp)<=30).length}</div></div><div class="card"><div class="mu">Pending requests</div><div class="kpi">${S.pr.filter(p=>p.st=='Pending').length}</div></div><div class="card"><div class="mu">Inventory value</div><div class="kpi">${fm(val())}</div></div></div>
+<div class="grid" style="margin-top:12px"><div class="card"><h3>Monthly consumption (units)</h3>${bars(monthly())}</div><div class="card"><h3>Critical alerts</h3>${a.filter(x=>x.p=='High').slice(0,5).map(x=>`<p class="e">${esc(x.t)}: ${esc(x.m)}</p>`).join('')||'<p class="mu">No critical alerts.</p>'}</div>
+<div class="card"><h3>Quick actions</h3><div class="row"><button class="btn s" onclick="addChem()">Add chemical</button><button class="btn s" onclick="consume()">Record consumption</button><button class="btn s" onclick="newPR(names()[0])">New request</button></div><h3 style="margin-top:14px">Recent activity</h3>${S.tx.slice(-4).reverse().map(t=>`<p class="mu">${t.date} · ${esc(t.type)} · ${esc(t.chem)} · ${t.qty}</p>`).join('')}</div></div>`},
+Inventory(){let r=S.chem.filter(c=>(c.name+c.formula).toLowerCase().includes(q.toLowerCase())&&(!cat||c.cat==cat));r.sort((a,b)=>sort=='qty'?a.qty-b.qty:sort=='exp'?a.exp.localeCompare(b.exp):a.name.localeCompare(b.name));
+return `<h2>Chemical inventory</h2><div class="tb"><input aria-label="Search" placeholder="Search name or formula" value="${esc(q)}" oninput="clearTimeout(window._t);q=this.value;window._t=setTimeout(()=>{rerender();const i=document.querySelector('.tb input');i.focus();i.setSelectionRange(99,99)},250)"><select aria-label="Category" onchange="cat=this.value;rerender()"><option value="">All categories</option>${[...new Set(S.chem.map(c=>c.cat))].map(c=>`<option ${c==cat?'selected':''}>${esc(c)}</option>`).join('')}</select><select aria-label="Sort" onchange="sort=this.value;rerender()"><option value="name">Sort: name</option><option value="qty" ${sort=='qty'?'selected':''}>Sort: quantity</option><option value="exp" ${sort=='exp'?'selected':''}>Sort: expiry</option></select><button class="btn" onclick="addChem()">Add chemical</button></div>
+<div class="card tw"><table><tr><th>Name</th><th>Formula</th><th>Qty</th><th>Min</th><th>Batch</th><th>Expiry</th><th>Location</th><th></th></tr>${r.map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.formula)}</td><td class="${c.qty<=c.min?'w':''}">${c.qty} ${esc(c.unit)}</td><td>${c.min}</td><td>${esc(c.batch)}</td><td>${c.exp} ${sb(days(c.exp))}</td><td>${esc(c.loc)}</td><td><button class="btn g s" onclick="addChem('${c.id}')">Edit</button> <button class="btn g s" onclick="consume('${esc(c.name)}')">Use</button> <button class="btn d s" onclick="delChem('${c.id}')">Delete</button></td></tr>`).join('')||'<tr><td colspan=8 class="mu">No chemicals match. Clear the filters or add one.</td></tr>'}</table></div>`},
+Equipment(){return `<h2>Equipment</h2><div class="card tw"><table><tr><th>Name</th><th>Status</th><th>Last service</th><th>Next due</th><th>History</th><th></th></tr>${S.eq.map(e=>{const n=days(e.last)+e.int;return `<tr><td>${esc(e.name)}</td><td class="${e.status=='Operational'?'o':'w'}">${e.status}</td><td>${e.last}</td><td class="${n<0?'e':n<=7?'w':''}">${iso(n)} (${n}d)</td><td>${e.hist.length} records</td><td><button class="btn s" onclick="eqAct('${e.id}','m')">Record maintenance</button> <button class="btn g s" onclick="eqAct('${e.id}','f')">Report fault</button></td></tr>`}).join('')}</table></div>`},
+Consumption(){return `<h2>Consumption</h2><div class="tb"><button class="btn" onclick="consume()">Record consumption</button></div><div class="card tw"><table><tr><th>Date</th><th>Chemical</th><th>Qty</th><th>Researcher</th><th>Purpose</th></tr>${S.tx.filter(t=>t.type=='Consumption').reverse().map(t=>`<tr><td>${t.date}</td><td>${esc(t.chem)}</td><td>${t.qty}</td><td>${esc(t.who||'-')}</td><td>${esc(t.why||'-')}</td></tr>`).join('')}</table></div>`},
+Alerts(){const a=alerts();return `<h2>Alerts</h2><div class="tb"><button class="btn g" onclick="alerts().forEach(x=>S.read[x.k]=1);save();rerender()">Mark all read</button></div><div class="card">${a.map(x=>`<p style="opacity:${S.read[x.k]?.5:1}"><span class="tag ${x.p=='High'?'e':x.p=='Medium'?'w':''}">${x.p}</span> <b>${esc(x.t)}</b> ${esc(x.m)} <button class="btn g s" onclick="S.read['${x.k}']=1;save();rerender()">Mark read</button></p>`).join('')||'<p class="mu">No active alerts.</p>'}<p class="mu">Alerts are recalculated from current records, so each condition appears once and clears when resolved.</p></div>`},
+Procurement(){return `<h2>Procurement</h2><div class="tb"><button class="btn" onclick="newPR(names()[0])">New request</button></div><div class="card tw"><table><tr><th>ID</th><th>Chemical</th><th>Qty</th><th>Estimate</th><th>Supplier</th><th>Status</th><th></th></tr>${S.pr.map(p=>`<tr><td>${p.id}</td><td>${esc(p.chem)}</td><td>${p.qty}</td><td>${fm(p.est)}</td><td>${esc(p.sup)}</td><td>${p.st}</td><td>${p.st=='Pending'?`<button class="btn s" onclick="prStep('${p.id}','Approved')">Approve</button> <button class="btn d s" onclick="prStep('${p.id}','Rejected')">Reject</button>`:p.st=='Approved'?`<button class="btn s" onclick="prStep('${p.id}','Ordered')">Mark ordered</button>`:p.st=='Ordered'?`<button class="btn s" onclick="prStep('${p.id}','Received')">Record receipt</button>`:''}</td></tr>`).join('')}</table></div><p class="mu">Approval does not add stock. Only recording receipt does.</p>`},
+Analytics(){const cats={};S.chem.forEach(c=>cats[c.cat]=(cats[c.cat]||0)+c.qty*c.cost);const sp={};S.tx.filter(t=>t.type=='Purchase').forEach(t=>{const k=t.date.slice(0,7);sp[k]=(sp[k]||0)+t.qty*t.cost});
+return `<h2>Analytics</h2><div class="grid"><div class="card"><h3>Monthly consumption</h3>${bars(monthly())}</div><div class="card"><h3>Purchase spend by month (₹)</h3>${bars(Object.entries(sp).sort().map(x=>[x[0],Math.round(x[1])]))}</div><div class="card"><h3>Value by category (₹)</h3>${bars(Object.entries(cats).map(x=>[x[0].slice(0,5),Math.round(x[1])]))}</div><div class="card"><h3>Expiry timeline</h3>${S.chem.slice().sort((a,b)=>a.exp.localeCompare(b.exp)).slice(0,6).map(c=>`<p>${esc(c.name)} ${c.exp} ${sb(days(c.exp))}</p>`).join('')}</div></div>`},
+Reports(){return `<h2>Reports</h2><div class="grid">${[['Inventory summary',()=>[['Name','Qty','Unit','Min','Expiry','Value'],...S.chem.map(c=>[c.name,c.qty,c.unit,c.min,c.exp,c.qty*c.cost])]],['Low-stock report',()=>[['Name','Qty','Min'],...S.chem.filter(c=>c.qty<=c.min).map(c=>[c.name,c.qty,c.min])]],['Expiry report',()=>[['Name','Expiry','Days'],...S.chem.filter(c=>days(c.exp)<=30).map(c=>[c.name,c.exp,days(c.exp)])]],['Consumption report',()=>[['Date','Chemical','Qty'],...S.tx.filter(t=>t.type=='Consumption').map(t=>[t.date,t.chem,t.qty])]],['Procurement report',()=>[['ID','Chemical','Qty','Estimate','Status'],...S.pr.map(p=>[p.id,p.chem,p.qty,p.est,p.st])]]].map((r,i)=>{(window._r=window._r||[])[i]=r;return `<div class="card"><h3>${r[0]}</h3><div class="row"><button class="btn s" onclick="csv('${r[0].replace(/ /g,'_')}.csv',_r[${i}][1]())">Export CSV</button><button class="btn g s" onclick="window.print()">Print</button></div></div>`}).join('')}</div>`},
+Assistant(){return `<h2>LabFlow Intelligence</h2><div class="card"><p class="mu">Rule-based answers computed from your current data. No AI model is connected in this demo.</p><div class="row">${['Which chemicals are running low?','Which chemicals expire within 30 days?','Total purchase spend this month','Most consumed chemicals','Which equipment needs maintenance?'].map(x=>`<button class="btn g s" onclick="ask('${x}')">${x}</button>`).join('')}</div><div class="chat" id="chat" aria-live="polite"></div></div>`},
+Settings(){return `<h2>Settings</h2><div class="card"><h3>Demo workspace</h3><p class="mu">Data lives in this browser only. Role: Administrator (demo). Real role enforcement needs a backend with row-level security.</p><div class="row"><button class="btn d" onclick="if(confirm('Reset all demo data?')){seed();rerender();toast('Demo reset')}">Reset demo</button><button class="btn g" onclick="location.reload()">Exit demo</button></div></div>`}};
+function ask(x){const m=new Date().toISOString().slice(0,7);let a='';
+if(/low/.test(x))a=S.chem.filter(c=>c.qty<=c.min).map(c=>`${c.name} (${c.qty}/${c.min} ${c.unit})`).join('; ')||'None.';
+else if(/expire/.test(x))a=S.chem.filter(c=>days(c.exp)<=30).map(c=>`${c.name} (${c.exp})`).join('; ')||'None.';
+else if(/spend/.test(x))a=fm(S.tx.filter(t=>t.type=='Purchase'&&t.date.startsWith(m)).reduce((s,t)=>s+t.qty*t.cost,0))+' recorded purchases this month.';
+else if(/consumed/.test(x)){const c={};S.tx.filter(t=>t.type=='Consumption').forEach(t=>c[t.chem]=(c[t.chem]||0)+t.qty);a=Object.entries(c).sort((x,y)=>y[1]-x[1]).slice(0,3).map(e=>`${e[0]} (${e[1]})`).join('; ')}
+else a=S.eq.filter(e=>days(e.last)+e.int<=7||e.status!='Operational').map(e=>e.name).join('; ')||'None.';
+$('#chat').innerHTML=`<p><b>You:</b> ${esc(x)}</p><p><span class="tag">Rule-based</span> ${esc(a)}</p>`}
+</script></body></html>
